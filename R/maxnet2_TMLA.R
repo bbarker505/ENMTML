@@ -1,7 +1,7 @@
 maxnet2 <- function(p,
                     data,
                     f = maxnet.formula(p, data),
-                    regmult = 2.0,
+                    regmult = 5.0,
                     regfun = maxnet::maxnet.default.regularization,
                     ...)
   
