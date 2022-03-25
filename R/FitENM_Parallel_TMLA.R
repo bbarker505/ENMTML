@@ -3497,12 +3497,12 @@ FitENM_TMLA_Parallel <- function(RecordsData,
         #BRT model
         for (i in 1:N) {
           dataPr <- PAtrain[[i]]
-          learn.rate <- 0.005
+          learn.rate <- 0.0005
           ModelT <- NULL
           while(is.null(ModelT)){
             print(learn.rate)
             try(ModelT <- dismo::gbm.step(data=dataPr, gbm.x=VarColT, gbm.y="PresAbse", family = "bernoulli",
-                                       tree.complexity= 5, learning.rate=learn.rate, bag.fraction= 0.75,silent=T,
+                                       tree.complexity= 3, learning.rate=learn.rate, bag.fraction= 0.6,silent=F,
                                        plot.main = F))
             learn.rate <- learn.rate-0.0005
             if(learn.rate<=0){
