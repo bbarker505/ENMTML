@@ -2662,7 +2662,7 @@ FitENM_TMLA_Parallel <- function(RecordsData,
             #                       importance=T, type="classification")
             # FinalModelT <- 1-predict(VariablesT,Model,type="prob")
             Model <- randomForest::tuneRF(SpDataT[,VarColT], (SpDataT[,"PresAbse"]), trace=F,
-                            stepFactor=2, ntreeTry=500, doBest=T, plot = F)
+                            stepFactor=2, ntreeTry=1000, doBest=T, plot = F)
             FinalModelT <- raster::predict(VariablesT,Model)
             FinalModel <- STANDAR(FinalModelT)
             PredPoint <- raster::extract(FinalModel,SpDataT[, 2:3])
